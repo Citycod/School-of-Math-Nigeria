@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School of Mathematics Nigeria | WAEC & JAMB Prep</title>
+    <link href="/SCHOOL OF MATH/bootstrap/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/SCHOOL OF MATH/fontawesome-free-6.7.2-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #0a2463; /* Navy Blue */
+            --secondary: #ffd700; /* Golden Yellow */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --accent: #3e92cc;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary) !important;
+        }
+        
+        .text-primary {
+            color: var(--primary) !important;
+        }
+        
+        .text-secondary {
+            color: var(--secondary) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #081f4e;
+            border-color: #081f4e;
+        }
+        
+        .btn-warning {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .brand-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: var(--secondary) !important;
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a3b8b 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* Cards */
+        .card {
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary) !important;
+            color: white;
+        }
+        
+        /* Animations */
+        .animate-up {
+            animation: fadeInUp 1s ease;
+        }
+        
+        .animate-left {
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .animate-right {
+            animation: fadeInRight 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .display-5 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Enhanced Elements from Second Code */
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.8) 100%);
+        }
+        
+        .floating-badge {
+            position: absolute;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            font-size: 0.875rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        
+        .goal-cards .card {
+            transition: all 0.3s ease;
+        }
+        
+        .goal-cards .card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./images/Schoolofmlogo.png" 
+                     alt="School of Mathematics Nigeria Logo" 
+                     class="d-inline-block align-top"
+                     style="height: 80px; width: auto; margin-right: 10px;">
+                <span class="brand-text">SOMNG</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-3 mt-3 mt-0">
+                   
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section position-relative overflow-hidden ">
+        <div class="container position-relative z-1 ">
+            <div class="row align-items-center">
+                <div class="col-lg-6 animate-left">
+                    <div class="mb-4">
+                        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-20 rounded-pill px-3 py-2">
+                            🚀 Since April 21, 2021
+                        </span>
+                    </div>
+                    
+                    <h1 class="hero-title display-3 fw-bold mb-4 text-white">
+                        Master Mathematics for <span class="text-warning">JAMB</span> & <span class="text-warning">WAEC</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle lead text-white-80 mb-5">
+                        Comprehensive learning platform designed to help Nigerian students excel in mathematics examinations
+                    </p>
+                    
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <div class="d-flex align-items-center text-white">
+                            <i class="fas fa-users me-2"></i>
+                            <small>Goal: 1M Learners by 2027</small>
+                        </div>
+                        <div class="d-flex align-items-center text-white">
+                            <i class="fas fa-book me-2"></i>
+                            <small>10K+ Hours Content</small>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
+                        <button class="btn btn-primary btn-lg gradient-primary "onclick="window.open('https://chat.whatsapp.com/JMxiU78zTJPEVpkHTd5ViS?mode=r_c', '_blank')" >
+                            Join Our Bootcamp
+                            <i class="fa fa-arrow-right ms-2"></i>
+                        </button>
+                        <button class="btn btn-outline-warning btn-lg text-white" onclick="window.open('https://www.youtube.com/@SchoolOfMathematicsNigeria', '_blank')">
+                            <i class="fa fa-play me-2"></i>
+                            Watch Our Videos
+                        </button>
+                    </div>
+                    
+                    
+                    <div class="pt-3 border-top border-opacity-25 mt-4">
+                        <small class="text-white-50">
+                            Founded by <span class="fw-semibold text-white">Rose Danjuma Uwanassara</span> • 
+                            Trusted by thousands of students across Nigeria
+                        </small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 d-none d-lg-block animate-right">
+                    <div class="position-relative">
+                        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg border border-3 border-warning">
+                            <iframe src="https://www.youtube.com/embed/I89tnFto3rw?autoplay=0&mute=1&controls=1&rel=0" 
+                                    title="Mathematics Tutorial Video" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
+                        </div>
+                        <div class="floating-badge" style="top: -1rem; right: -1rem;">WAEC & JAMB Ready!</div>
+                        <div class="floating-badge" style="bottom: -1rem; left: -1rem; background: var(--primary); color: white;">₦5,000 - ₦10,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <div class="d-inline-flex align-items-center bg-warning bg-opacity-10 border border-warning border-opacity-20 rounded-pill px-3 py-2 mb-4">
+                    <i class="fas fa-calendar-alt text-warning me-2"></i>
+                    <span class="text-warning fw-semibold small">Est. April 21, 2021</span>
+                </div>
+                <h2 class="section-title animate-up">Our Story</h2>
+                <p class="lead text-muted">
+                    Born out of a whiteboard, a marker, and one woman's mission to make math simple, relatable, and joyful.
+                </p>
+            </div>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-up">
+                    <h3 class="h2 fw-bold text-primary mb-4">From Whiteboard to Digital Platform</h3>
+                    <p class="text-muted mb-4">
+                        School of Mathematics, Nigeria Ltd was founded by <strong class="text-dark">Rose Danjuma Uwanassara</strong> with 
+                        a clear vision: to become Africa's leading destination for mathematics learning, resources, and innovation.
+                    </p>
+                    <p class="text-muted mb-4">
+                        We don't just teach math - we teach confidence, build communities, and prepare learners for a 
+                        tech-driven future where numeracy is power. From WAEC prep to global partnerships, we're transforming 
+                        how mathematics is learned across Africa.
+                    </p>
+                    
+                    <div class="row">
+                        <div class="col-sm-6 mb-3 animate-up animate-delay-1">
+                            <div class="card h-100 border-primary border-opacity-20">
+                                <div class="card-body">
+                                    <h5 class="text-primary fw-bold mb-2">Our Mission</h5>
+                                    <p class="small text-muted mb-0">
+                                        To help students understand and enjoy math through content, community, and creative learning.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3 animate-up animate-delay-2">
+                            <div class="card h-100 border-warning border-opacity-20">
+                                <div class="card-body">
+                                    <h5 class="text-warning fw-bold mb-2">Our Vision</h5>
+                                    <p class="small text-muted mb-0">
+                                        To become Africa's most trusted and innovative math learning platform.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate-up animate-delay-1">
+                    <div class="text-center text-lg-start mb-4">
+                        <h3 class="h2 fw-bold text-primary mb-3">Goals for 2027</h3>
+                        <p class="text-muted">
+                            We're on an ambitious journey to transform mathematics education across Africa.
+                        </p>
+                    </div>
+                    
+                    <div class="goal-cards">
+                        <div class="card border-start border-warning border-4 mb-3">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-warning bg-opacity-10 rounded p-3 me-3">
+                                        <i class="fas fa-bullseye h4 text-warning mb-0"></i>
+                                    </div>
+                                    <div>
+                                        <div class="h3 fw-bold text-primary mb-1">1 Million</div>
+                                        <p class="small text-muted mb-0">Math learners through digital platforms</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-start border-warning border-4 mb-3">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-warning bg-opacity-10 rounded p-3 me-3">
+                                        <i class="fas fa-eye h4 text-warning mb-0"></i>
+                                    </div>
+                                    <div>
+                                        <div class="h3 fw-bold text-primary mb-1">10,000</div>
+                                        <p class="small text-muted mb-0">Hours of free learning content</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-start border-warning border-4 mb-3">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-warning bg-opacity-10 rounded p-3 me-3">
+                                        <i class="fas fa-chart-line h4 text-warning mb-0"></i>
+                                    </div>
+                                    <div>
+                                        <div class="h3 fw-bold text-primary mb-1">500</div>
+                                        <p class="small text-muted mb-0">Schools through outreach & partnerships</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center gradient-bg rounded-3 p-5 border border-primary border-opacity-10 animate-up">
+                <h3 class="display-6 fw-bold text-primary mb-2">"Making Math Make Sense"</h3>
+                <p class="text-muted">Our commitment to every student, every lesson, every day.</p>
+            </div>
+        </div>
+    </section>
+        <!-- Courses Section -->
+        <section id="courses" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <div class="d-inline-flex align-items-center bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-pill px-3 py-2 mb-4">
+                        <i class="bi bi-star text-primary me-2"></i>
+                        <span class="text-white fw-semibold small">Most Popular Course</span>
+                    </div>
+                    <h2 class="display-5 fw-bold mb-4">WAEC & JAMB Smart Math Bootcamp</h2>
+                    <p class="lead text-muted">
+                        A 6-week intensive bootcamp for secondary school students preparing for WAEC and JAMB. 
+                        Learn key topics, exam tricks, and build unshakeable math confidence.
+                    </p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card border-primary border-2 shadow-lg">
+                            <div class="card-header gradient-bg">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h4 class="h5 text-primary fw-bold mb-0">6-Week Intensive Program</h4>
+                                    <span class="badge bg-warning">Limited Spots</span>
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="text-center border-bottom pb-4 mb-4">
+                                    <div class="d-flex justify-content-center align-items-center gap-3">
+                                        <div class="h2 fw-bold text-primary mb-0">₦5,000 - ₦10,000</div>
+                                        <div class="d-flex align-items-center text-warning">
+                                            <i class="bi bi-gift me-1"></i>
+                                            <small class="fw-medium">Scholarships Available</small>
+                                        </div>
+                                    </div>
+                                    <p class="small text-muted mt-2 mb-0">
+                                        Flexible pricing based on your financial situation
+                                    </p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h5 class="fw-semibold mb-3 d-flex align-items-center">
+                                        <i class="bi bi-check-circle text-warning me-2"></i>
+                                        What You'll Get:
+                                    </h5>
+                                    <div class="feature-list">
+                                        <div class="d-flex align-items-start mb-2">
+                                            <i class="bi bi-check-circle text-warning me-2 mt-1"></i>
+                                            <small>Live interactive sessions on Zoom</small>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <i class="bi bi-check-circle text-warning me-2 mt-1"></i>
+                                            <small>WhatsApp group support 24/7</small>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <i class="bi bi-check-circle text-warning me-2 mt-1"></i>
+                                            <small>WAEC & JAMB exam strategies</small>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <i class="bi bi-check-circle text-warning me-2 mt-1"></i>
+                                            <small>Key mathematical concepts</small>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <i class="bi bi-check-circle text-warning me-2 mt-1"></i>
+                                            <small>Confidence building techniques</small>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <i class="bi bi-check-circle text-warning me-2 mt-1"></i>
+                                            <small>Practice questions & solutions</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-3 border-top">
+                                    <button class="btn btn-primary gradient-primary w-100 btn-lg" onclick="window.open('https://wa.me/+2349014149124', '_blank')">
+                                        <i class="bi bi-whatsapp me-2"></i>
+                                        Register via WhatsApp
+                                    </button>
+                                    <p class="text-center small text-muted mt-2 mb-0">
+                                        Click to chat with us on WhatsApp for registration
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="d-flex align-items-center mb-0">
+                                        <i class="bi bi-calendar text-primary me-2"></i>
+                                        Class Schedule
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center bg-light rounded p-3 mb-3">
+                                        <div>
+                                            <div class="fw-semibold text-primary">Saturdays</div>
+                                            <small class="text-muted">Core Concepts</small>
+                                        </div>
+                                        <div class="text-end">
+                                            <div class="d-flex align-items-center small">
+                                                <i class="bi bi-clock me-1"></i>
+                                                10:00 AM - 12:00 PM
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center bg-light rounded p-3">
+                                        <div>
+                                            <div class="fw-semibold text-primary">Wednesdays</div>
+                                            <small class="text-muted">Practice & Review</small>
+                                        </div>
+                                        <div class="text-end">
+                                            <div class="d-flex align-items-center small">
+                                                <i class="bi bi-clock me-1"></i>
+                                                6:00 PM - 8:00 PM
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="d-flex align-items-center mb-0">
+                                        <i class="bi bi-camera-video text-primary me-2"></i>
+                                        Learning Platform
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded p-3 mb-3">
+                                        <i class="bi bi-camera-video text-primary me-3 fs-4"></i>
+                                        <div>
+                                            <div class="fw-medium text-white">Live Zoom Sessions</div>
+                                            <small class="text-warning">Interactive online classes</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center bg-success bg-opacity-10 border border-success border-opacity-20 rounded p-3 mb-3">
+                                        <i class="bi bi-whatsapp text-success me-3 fs-4"></i>
+                                        <div>
+                                            <div class="fw-medium">WhatsApp Support</div>
+                                            <small class="text-muted">24/7 community & help</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center bg-purple bg-opacity-10 border border-purple border-opacity-20 rounded p-3">
+                                        <i class="bi bi-people text-purple me-3 fs-4"></i>
+                                        <div>
+                                            <div class="fw-medium">Small Class Sizes</div>
+                                            <small class="text-muted">Personalized attention</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card gradient-testimonial border-warning border-opacity-20">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start">
+                                    <div class="text-warning display-4 me-3">"</div>
+                                    <div>
+                                        <p class="small fst-italic mb-3">
+                                            "This bootcamp transformed my relationship with mathematics. I went from struggling 
+                                            to actually enjoying problem-solving!"
+                                        </p>
+                                        <small class="text-muted">- Sarah O., WAEC Graduate 2023</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Bootcamp Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container py-5">
+            <div class="row justify-content-center text-center animate-up">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">WAEC & JAMB Smart Math Bootcamp</h2>
+                    <p class="lead mb-5">
+                        A 6-week intensive bootcamp for secondary school students preparing for WAEC and JAMB. 
+                        Learn key topics, exam tricks, and build unshakeable math confidence.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="" class="btn btn-warning btn-lg px-4 text-primary"onclick="window.open('https://wa.me/+2349014149124', '_blank')">Join Bootcamp</a>
+                        <a href="#" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <div class="d-inline-flex align-items-center bg-success bg-opacity-10 border border-success border-opacity-20 rounded-pill px-3 py-2 mb-4">
+                    <i class="fas fa-gift text-success me-2"></i>
+                    <span class="text-success fw-semibold small">100% Free Resources</span>
+                </div>
+                <h2 class="section-title animate-up">Free Learning Resources</h2>
+                <p class="lead text-muted">
+                    Access our comprehensive collection of mathematics resources designed to support your learning journey. 
+                    Everything you need to excel, completely free.
+                </p>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-md-6 col-lg-4 mb-4 animate-up">
+                    <div class="card h-100 border-start border-primary border-4">
+                        <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="bg-success bg-opacity-10 border border-success border-opacity-20 rounded p-3">
+                                    <i class="fas fa-file-alt text-success fs-4"></i>
+                                </div>
+                                <span class="badge bg-success">Available</span>
+                            </div>
+                            <h5 class="mt-3 mb-0">WAEC Past Questions</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="small text-muted mb-4">
+                                Complete collection of mathematics past questions from recent years
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                                <small class="text-muted fw-medium">PDF Download</small>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-download me-1"></i>
+                                    Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4 animate-up animate-delay-1">
+                    <div class="card h-100 border-start border-primary border-4">
+                        <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded p-3">
+                                    <i class="fas fa-calculator text-primary fs-4"></i>
+                                </div>
+                                <span class="badge bg-success">Available</span>
+                            </div>
+                            <h5 class="mt-3 mb-0">WAEC Formula Sheet</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="small text-muted mb-4">
+                                Printable formula sheet with all essential mathematics formulas
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                                <small class="text-muted fw-medium">PDF Download</small>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-download me-1"></i>
+                                    Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4 animate-up animate-delay-2">
+                    <div class="card h-100 border-start border-primary border-4">
+                        <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="bg-purple bg-opacity-10 border border-purple border-opacity-20 rounded p-3">
+                                    <i class="fas fa-book text-purple fs-4"></i>
+                                </div>
+                                <span class="badge bg-secondary">
+                                    <i class="fas fa-clock me-1"></i>
+                                    Coming Soon
+                                </span>
+                            </div>
+                            <h5 class="mt-3 mb-0">Math Flashcards</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="small text-muted mb-4">
+                                Interactive flashcards for quick revision and memorization
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                                <small class="text-muted fw-medium">Interactive</small>
+                                <button class="btn btn-secondary btn-sm" disabled>
+                                    Coming Soon
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card bg-danger bg-opacity-10 border-danger border-opacity-20 shadow-lg animate-up">
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-danger rounded p-3 me-3">
+                                    <i class="fab fa-youtube text-white fs-4"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h4 text-dark fw-bold mb-1">YouTube Channel</h3>
+                                    <p class="text-danger fw-medium mb-0">@somnigeria</p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-dark mb-3">
+                                Subscribe to our YouTube channel for free video lessons, exam tips, and 
+                                step-by-step problem solving tutorials. New content uploaded regularly!
+                            </p>
+                            
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge border border-danger text-danger bg-white">Video Lessons</span>
+                                <span class="badge border border-danger text-danger bg-white">Exam Tips</span>
+                                <span class="badge border border-danger text-danger bg-white">Problem Solving</span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 text-center text-lg-end">
+                            <button class="btn btn-danger btn-lg" onclick="window.open('https://www.youtube.com/@SchoolOfMathematicsNigeria',)">
+                                <i class="fab fa-youtube me-2"></i>
+                                Visit YouTube Channel
+                            </button>
+                            <p class="small text-muted mt-2 mb-0">
+                                Join thousands of students learning for free
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title animate-up">What Our Students Say</h2>
+            <div class="row">
+                <div class="col-12 animate-up">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4">
+                                        <div class="testimonial-card">
+                                            <p>"This platform helped me improve my JAMB mathematics score from 45 to 78. The explanations are clear and the practice questions are very similar to the actual exam."</p>
+                                            <div class="d-flex align-items-center mt-4">
+                                                <img src="https://randomuser.me/api/portraits/women/32.jpg" 
+                                                     alt="Student" 
+                                                     class="testimonial-img me-3">
+                                                <div>
+                                                    <h6 class="mb-0">Amina Yusuf</h6>
+                                                    <small class="text-muted">Lagos, Nigeria</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4">
+                                        <div class="testimonial-card">
+                                            <p>"The geometry course was exactly what I needed to understand theorems and proofs. I finally got an A1 in WAEC mathematics thanks to this platform!"</p>
+                                            <div class="d-flex align-items-center mt-4">
+                                                <img src="https://randomuser.me/api/portraits/men/45.jpg" 
+                                                     alt="Student" 
+                                                     class="testimonial-img me-3">
+                                                <div>
+                                                    <h6 class="mb-0">Chinedu Okeke</h6>
+                                                    <small class="text-muted">Abuja, Nigeria</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4">
+                                        <div class="testimonial-card">
+                                            <p>"I was struggling with algebra until I found this platform. The step-by-step solutions to past questions made all the difference in my understanding."</p>
+                                            <div class="d-flex align-items-center mt-4">
+                                                <img src="https://randomuser.me/api/portraits/women/68.jpg" 
+                                                     alt="Student" 
+                                                     class="testimonial-img me-3">
+                                                <div>
+                                                    <h6 class="mb-0">Folake Adebayo</h6>
+                                                    <small class="text-muted">Ibadan, Nigeria</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <div class="d-inline-flex align-items-center bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-pill px-3 py-2 mb-4">
+                    <i class="fas fa-users text-primary me-2"></i>
+                    <span class="text-white fw-semibold small">Join Our Growing Community</span>
+                </div>
+                <h2 class="section-title animate-up">Learn Together, Grow Together</h2>
+                <p class="lead text-muted">
+                    Connect with fellow mathematics learners, get support when you need it, and celebrate 
+                    victories together. Learning is better when we do it as a community.
+                </p>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4 animate-up">
+                    <div class="card h-100 bg-success bg-opacity-10 border-success border-opacity-20">
+                        <div class="card-header bg-transparent border-0">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-white rounded shadow-sm p-3 me-3">
+                                    <i class="fab fa-whatsapp text-success fs-4"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4 class="mb-0">WhatsApp Study Group</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-dark mb-4">
+                                Join our active community of mathematics learners
+                            </p>
+                            
+                            <div class="mb-4">
+                                <h5 class="text-dark fw-semibold mb-3 d-flex align-items-center">
+                                    <i class="fas fa-heart text-danger me-2"></i>
+                                    What You'll Get:
+                                </h5>
+                                <div class="benefit-list">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-bolt text-warning me-2"></i>
+                                        <small class="text-dark">24/7 peer support</small>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-bolt text-warning me-2"></i>
+                                        <small class="text-dark">Quick doubt resolution</small>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-bolt text-warning me-2"></i>
+                                        <small class="text-dark">Study motivation</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary w-100" onclick="window.open('https://chat.whatsapp.com/JMxiU78zTJPEVpkHTd5ViS?mode=r_c', '_blank')">
+                                <i class="fas fa-external-link-alt me-2"></i>
+                                Join Group
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4 animate-up animate-delay-1">
+                    <div class="card h-100 bg-primary bg-opacity-10 border-primary border-opacity-20">
+                        <div class="card-header bg-transparent border-0">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-white rounded shadow-sm p-3 me-3">
+                                    <i class="fas fa-envelope text-primary fs-4"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4 class="mb-0 d-flex align-items-center gap-2">
+                                        Email Newsletter
+                                        <span class="badge bg-secondary">
+                                            <i class="fas fa-clock me-1"></i>
+                                            Coming Soon
+                                        </span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="text-dark mb-4">
+                                Weekly math tips, resources, and success stories
+                            </p>
+                            
+                            <div class="mb-4">
+                                <h5 class="text-dark fw-semibold mb-3 d-flex align-items-center">
+                                    <i class="fas fa-heart text-danger me-2"></i>
+                                    What You'll Get:
+                                </h5>
+                                <div class="benefit-list">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-bolt text-warning me-2"></i>
+                                        <small class="text-dark">Study strategies</small>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-bolt text-warning me-2"></i>
+                                        <small class="text-dark">New resources alerts</small>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-bolt text-warning me-2"></i>
+                                        <small class="text-dark">Exam preparation tips</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-secondary w-100" disabled>
+                                <i class="fas fa-bell me-2"></i>
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gradient-bg rounded-3 p-5 border border-primary  mb-5 animate-up">
+                <div class="text-center mb-4">
+                    <h3 class="h4 fw-bold mb-2">Growing Community</h3>
+                    <p class="text-muted">
+                        Join thousands of students who are already transforming their relationship with mathematics
+                    </p>
+                </div>
+                
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="h2 fw-bold text-primary">1000+</div>
+                        <small class="text-muted">Students Helped</small>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="h2 fw-bold text-warning">50+</div>
+                        <small class="text-muted">Video Lessons</small>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="h2 fw-bold text-primary">24/7</div>
+                        <small class="text-muted">Community Support</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h3 class="h4 fw-bold mb-3">Ready to Join Our Community?</h3>
+                <p class="text-muted mb-4">
+                    Start your journey with us today. Whether you're preparing for WAEC, JAMB, or just want to 
+                    improve your math skills, our community is here to support you every step of the way.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <button class="btn btn-primary gradient-primary btn-lg" onclick="window.open('https://chat.whatsapp.com/JMxiU78zTJPEVpkHTd5ViS?mode=r_c', '_blank')">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        Join WhatsApp Group
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg border-primary border-opacity-20">
+                        <i class="fa fa-envelope me-2"></i>
+                        Subscribe to Updates
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <div class="d-inline-flex align-items-center bg-danger bg-opacity-10 border border-danger border-opacity-20 rounded-pill px-3 py-2 mb-4">
+                    <i class="fas fa-heart text-danger me-2"></i>
+                    <span class="text-danger fw-semibold small">Sponsor a Math Star!</span>
+                </div>
+                <h2 class="section-title animate-up">Support Mathematics Education</h2>
+                <p class="lead text-muted">
+                    Your support helps us provide quality mathematics education to students across Nigeria. 
+                    Every donation, no matter the size, makes a real difference in a student's life.
+                </p>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-md-4 mb-3 animate-up">
+                    <div class="card text-center border-start border-warning border-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-center text-warning mb-2">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="h2 fw-bold text-primary mb-1">100+</div>
+                            <small class="text-muted">Students Supported</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 animate-up animate-delay-1">
+                    <div class="card text-center border-start border-warning border-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-center text-warning mb-2">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="h2 fw-bold text-primary mb-1">50+</div>
+                            <small class="text-muted">Scholarships Given</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 animate-up animate-delay-2">
+                    <div class="card text-center border-start border-warning border-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-center text-warning mb-2">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="h2 fw-bold text-primary mb-1">80%</div>
+                            <small class="text-muted">Exam Success Rate</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-lg-4 mb-4 animate-up">
+                    <div class="card h-100 bg-primary bg-opacity-10 border-primary border-opacity-20 position-relative">
+                        <div class="card-header text-center bg-transparent border-0">
+                            <div class="bg-white rounded-circle shadow-sm p-4 mx-auto" style="width: fit-content;">
+                                <i class="fas fa-book text-primary fs-4"></i>
+                            </div>
+                            <h4 class="h2 fw-bold text-warning mt-3">₦1,000</h4>
+                            <div class="h5 fw-semibold text-white">Study Buddy</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="text-white small mb-4">
+                                Help one student access basic learning materials
+                            </p>
+                            <button class="btn btn-danger w-100">
+                                <i class="fas fa-heart me-2"></i>
+                                Support Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 animate-up animate-delay-1">
+                    <div class="card h-100 bg-warning bg-opacity-10 border-warning border-opacity-20 position-relative">
+                        <div class="position-absolute top-0 start-50 translate-middle">
+                            <span class="badge bg-warning">Most Popular</span>
+                        </div>
+                        <div class="card-header text-center bg-transparent border-0 pt-4">
+                            <div class="bg-white rounded-circle shadow-sm p-4 mx-auto" style="width: fit-content;">
+                                <i class="fas fa-users text-warning fs-4"></i>
+                            </div>
+                            <h4 class="h2 fw-bold text-primary mt-3">₦5,000</h4>
+                            <div class="h5 fw-semibold text-dark">Class Sponsor</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="text-dark small mb-4">
+                                Fund a student's complete bootcamp experience
+                            </p>
+                            <button class="btn btn-warning w-100">
+                                <i class="fas fa-heart me-2"></i>
+                                Support Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 animate-up animate-delay-2">
+                    <div class="card h-100 bg-warning bg-opacity-20 border-warning border-opacity-30 position-relative">
+                        <div class="card-header text-center bg-transparent border-0">
+                            <div class="bg-white rounded-circle shadow-sm p-4 mx-auto" style="width: fit-content;">
+                                <i class="fas fa-star text-warning fs-4"></i>
+                            </div>
+                            <h4 class="h2 fw-bold text-primary mt-3">₦10,000</h4>
+                            <div class="h5 fw-semibold text-dark">Math Champion</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="text-dark small mb-4">
+                                Support advanced resources and tools development
+                            </p>
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-heart me-2"></i>
+                                Support Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center gradient-bg rounded-3 p-5 border border-primary  mb-4 animate-up">
+                <h3 class="h4 fw-bold mb-3">Custom Donation</h3>
+                <p class="text-muted mb-4">
+                    Want to contribute a different amount? Every naira counts and helps us reach more students. 
+                    Contact us directly to discuss your donation.
+                </p>
+                <button class="btn btn-outline-primary border-primary border-opacity-20" onclick="window.open('https://wa.me/+2349014149124', '_blank')">
+                    <i class="fas fa-dollar-sign me-2"></i>
+                    Discuss Custom Amount
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title animate-up">Get In Touch</h2>
+                <p class="lead text-muted">
+                    Have questions about our courses? Need support with your learning journey? 
+                    We're here to help you succeed in mathematics.
+                </p>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-lg-4 mb-4 animate-up">
+                    <div class="card h-100 bg-success bg-opacity-10 border-success border-opacity-20 contact-card" onclick="window.open('https://wa.me/+2349014149124', '_blank')">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-white rounded-circle shadow-sm p-4 mx-auto mb-3" style="width: fit-content;">
+                                <i class="fab fa-whatsapp text-success fs-3"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-2">WhatsApp</h4>
+                            <p class="small text-muted mb-3">Quick responses for inquiries and support</p>
+                            <div class="fw-semibold text-dark">Chat with us</div>
+                            <button class="btn btn-outline-success bg-white mt-3"   onclick="window.open('https://wa.me/+2349014149124', '_blank')">
+                                Contact via WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 animate-up animate-delay-1">
+                    <div class="card h-100 bg-primary bg-opacity-10 border-primary border-opacity-20 contact-card" onclick="window.open('mailto:somnigeria@gmail.com', '_blank')">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-white rounded-circle shadow-sm p-4 mx-auto mb-3" style="width: fit-content;">
+                                <i class="fas fa-envelope text-primary fs-3"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-2 text-white">Email</h4>
+                            <p class="small  mb-3 text-white">For detailed inquiries and partnerships</p>
+                            <div class="fw-semibold text-dark text-white">somnigeria@gmail.com</div>
+                            <button class="btn btn-outline-primary bg-white mt-3" onclick="window.open('mailto:somnigeria@gmail.com', '_blank')">
+                                Contact via Email
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 animate-up animate-delay-2">
+                    <div class="card h-100 bg-danger bg-opacity-10 border-danger border-opacity-20 contact-card" onclick="window.open('https://www.youtube.com/@SchoolOfMathematicsNigeria', '_blank')">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-white rounded-circle shadow-sm p-4 mx-auto mb-3" style="width: fit-content;">
+                                <i class="fab fa-youtube text-danger fs-3"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-2">YouTube</h4>
+                            <p class="small text-muted mb-3">Follow our educational content</p>
+                            <div class="fw-semibold text-dark">www.youtube.com/@SchoolOfMathematicsNigeria</div>
+                            <button class="btn btn-outline-danger bg-white mt-3">
+                                Contact via YouTube
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card gradient-bg border border-primary border-opacity-10 mb-5 animate-up">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <h3 class="h4 fw-bold mb-3">Frequently Asked Questions</h3>
+                        <p class="text-muted">
+                            Quick answers to common questions about our courses and platform
+                        </p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <h5 class="fw-semibold mb-2">How do I register for the bootcamp?</h5>
+                                <p class="small text-muted">
+                                    Simply click the "Register via WhatsApp" button and send us a message. 
+                                    We'll guide you through the simple registration process.
+                                </p>
+                            </div>
+                            <div class="mb-4">
+                                <h5 class="fw-semibold mb-2">Are scholarships really available?</h5>
+                                <p class="small text-muted">
+                                    Yes! We offer need-based scholarships. Contact us to discuss your situation 
+                                    and we'll work out a payment plan that works for you.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <h5 class="fw-semibold mb-2">What if I miss a live session?</h5>
+                                <p class="small text-muted">
+                                    All sessions are recorded and shared with registered students. 
+                                    Plus, our WhatsApp support helps you catch up quickly.
+                                </p>
+                            </div>
+                            <div class="mb-4">
+                                <h5 class="fw-semibold mb-2">Do you offer one-on-one tutoring?</h5>
+                                <p class="small text-muted">
+                                    Contact us to discuss personalized tutoring options. We can arrange 
+                                    individual sessions based on your specific needs and budget.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center animate-up">
+                <h3 class="h4 fw-bold mb-3">Ready to Start Your Math Journey?</h3>
+                <p class="text-muted mb-4">
+                    Don't let mathematics hold you back. Join thousands of students who have 
+                    transformed their relationship with math through our proven teaching methods.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <button class="btn btn-primary btn-lg" onclick="window.open('https://wa.me/2349014149124', '_blank')">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        Start WhatsApp Chat
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg" onclick="window.open('https://www.youtube.com/@SchoolOfMathematicsNigeria', '_blank')">
+                        <i class="fab fa-youtube me-2"></i>
+                        Watch Free Videos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-4 animate-up">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="./images/Schoolofmlogo.png" alt="School of Mathematics Nigeria" height="40" class="me-2">
+                        <div>
+                            <div class="fw-bold text-white">School of Mathematics Nigeria</div>
+                            <small class="opacity-75">Making math make sense</small>
+                        </div>
+                    </div>
+                    <p class="small opacity-75">
+                        Africa's leading destination for mathematics learning, resources, and innovation. 
+                        Transforming lives through quality education since 2021.
+                    </p>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 animate-up animate-delay-1">
+                    <h5 class="fw-semibold text-white mb-3">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="#about" class="d-block text-white text-decoration-none opacity-75 mb-2 small">About Us</a>
+                        <a href="#courses" class="d-block text-white text-decoration-none opacity-75 mb-2 small">WAEC & JAMB Bootcamp</a>
+                        <a href="#resources" class="d-block text-white text-decoration-none opacity-75 mb-2 small">Free Resources</a>
+                        <a href="#community" class="d-block text-white text-decoration-none opacity-75 mb-2 small">Join Community</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 animate-up animate-delay-2">
+                    <h5 class="fw-semibold text-white mb-3">Support</h5>
+                    <a href="#support" class="d-block text-white text-decoration-none opacity-75 mb-2 small">Sponsor a Student</a>
+                    <div class="small opacity-75">
+                        <p class="fw-medium mb-1">Bank Transfer:</p>
+                        <p class="mb-1">UBA: 1026471283</p>
+                        <p class="mb-0">School of Mathematics Nigeria LTD</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 animate-up animate-delay-3">
+                    <h5 class="fw-semibold text-white mb-3">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="https://wa.me/2349014149124" target="_blank" class="d-flex align-items-center text-white text-decoration-none opacity-75 mb-2">
+                            <i class="fab fa-whatsapp me-2"></i>
+                            <small>WhatsApp</small>
+                        </a>
+                        <a href="https://www.youtube.com/@SchoolOfMathematicsNigeria" target="_blank" class="d-flex align-items-center text-white text-decoration-none opacity-75 mb-2">
+                            <i class="fab fa-youtube me-2"></i>
+                            <small>@somnigeria</small>
+                        </a>
+                        <a class="d-flex align-items-center text-white text-decoration-none opacity-75 mb-2" onclick="window.open('mailto:somnigeria@gmail.com', '_blank')">
+                            <i class="fas fa-envelope me-2"></i>
+                            <small>Email Us</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-top border-white border-opacity-25 py-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                    <div class="small opacity-75 text-center text-md-start mb-3 mb-md-0">
+                        <p class="mb-1">&copy; 2025 School of Mathematics Nigeria Ltd. All rights reserved.</p>
+                        <p class="mb-0">Founded April 21, 2021 by Rose Danjuma Uwanassara</p>
+                    </div>
+                    <div class="d-flex align-items-center small opacity-75">
+                        <span>Made by UPLIX</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="/SCHOOL OF MATH/bootstrap/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="/SCHOOL OF MATH/jquery-3.7.1.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="./main.js"></script>
+</body>
+</html>
